@@ -1,5 +1,7 @@
 package it.unibo.game;
 
+import java.awt.Dimension;
+
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,22 +17,32 @@ public class View {
 
     public View() {
         valueLabel = new Label("0");
-
+        
         incrementButton = new Button("Increment");
         decrementButton = new Button("Decrement");
 
         HBox buttonBox = new HBox(10);
         buttonBox.getChildren().addAll(incrementButton, decrementButton);
+        
 
-        VBox root = new VBox(10);
+        VBox root = new VBox(30);
         root.setPadding(new Insets(10));
         root.getChildren().addAll(valueLabel, buttonBox);
-
         // Set up the stage
-        Scene scene = new Scene(root);
+        /*creo una finestra in base la dimensione dello schermo in cui viene 
+         * lanciata l'applicazione
+         */
         Stage stage = new Stage();
-        stage.setScene(scene);
-        stage.show();
+        Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        stage.setMinWidth(screenSize.getWidth() / 3);
+        stage.setMinHeight(screenSize.getHeight() / 2);
+        
+		try {
+            stage.setScene(new Scene(root, stage.getMinWidth(), stage.getMinHeight()));
+			stage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     public void setValueLabel(int value) {
