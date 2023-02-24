@@ -33,13 +33,13 @@ public class View {
         /*creo una finestra in base la dimensione dello schermo in cui viene 
          * lanciata l'applicazione
          */
-        Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-		double width = screenSize.getWidth() / 3;
-		double height = screenSize.getHeight() / 2;
         Stage stage = new Stage();
-		
+        Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        stage.setMinWidth(screenSize.getWidth() / 3);
+        stage.setMinHeight(screenSize.getHeight() / 2);
+        
 		try {
-            stage.setScene(new Scene(root, width, height));
+            stage.setScene(new Scene(root, stage.getMinWidth(), stage.getMinHeight()));
 			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
