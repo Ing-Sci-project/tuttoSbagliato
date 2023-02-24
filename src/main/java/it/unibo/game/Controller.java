@@ -1,8 +1,12 @@
 package it.unibo.game;
 
+import java.awt.Dimension;
+
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 public class Controller extends Application {
@@ -13,6 +17,7 @@ public class Controller extends Application {
     public void start(Stage primaryStage) throws Exception {
         model = new Model();
         view = new View();
+
 
         // Wire up the increment button
         view.getIncrementButton().setOnAction(new EventHandler<ActionEvent>() {
@@ -31,5 +36,11 @@ public class Controller extends Application {
                 view.setValueLabel(model.getValue());
             }
         });
+    }
+
+    @Override
+    public void stop() throws Exception {
+       
+        super.stop();
     }
 }
