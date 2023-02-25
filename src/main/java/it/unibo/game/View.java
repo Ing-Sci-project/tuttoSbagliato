@@ -16,28 +16,31 @@ public class View {
     private Button decrementButton;
 
     public View() {
-        valueLabel = new Label("0");
         
-        incrementButton = new Button("Increment");
-        decrementButton = new Button("Decrement");
+            valueLabel = new Label("0");
 
-        HBox buttonBox = new HBox(10);
-        buttonBox.getChildren().addAll(incrementButton, decrementButton);
-        
+            incrementButton = new Button("Increment");
+            decrementButton = new Button("Decrement");
 
-        VBox root = new VBox(30);
-        root.setPadding(new Insets(10));
-        root.getChildren().addAll(valueLabel, buttonBox);
+            HBox buttonBox = new HBox(10);
+            buttonBox.getChildren().addAll(incrementButton, decrementButton);
+
+
+            VBox root = new VBox(30);
+            root.setPadding(new Insets(10));
+            root.getChildren().addAll(valueLabel, buttonBox);
+         
         // Set up the stage
         /*creo una finestra in base la dimensione dello schermo in cui viene 
-         * lanciata l'applicazione
-         */
-        Stage stage = new Stage();
-        Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        stage.setMinWidth(screenSize.getWidth() / 3);
-        stage.setMinHeight(screenSize.getHeight() / 2);
+        * lanciata l'applicazione
+        Parent root = FXMLLoader.load(getClass().getResource(""));
+        */
         
-		try {
+        try {
+            Stage stage = new Stage();
+            Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+            stage.setMinWidth(screenSize.getWidth() / 3);
+            stage.setMinHeight(screenSize.getHeight() / 2);
             stage.setScene(new Scene(root, stage.getMinWidth(), stage.getMinHeight()));
 			stage.show();
 		} catch (Exception e) {
