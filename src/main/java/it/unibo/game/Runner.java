@@ -1,11 +1,10 @@
 package it.unibo.game;
 
 import java.io.FileNotFoundException;
-
 import javafx.application.Application;
 
 public class Runner {
-    Runner(){};
+    private Runner(){};
 
     /**
     * @param args
