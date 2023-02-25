@@ -2,7 +2,7 @@ package it.unibo.game;
 
 import java.awt.Dimension;
 import java.io.IOException;
-import java.net.URL;
+
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,10 +18,11 @@ public class View  {
     private Button decBtn;
     @FXML
     private Button incBtn;
-    final Parent root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/Counter.fxml"));
+    final Parent root;
 
     public View(Stage primaryStage) throws IOException {
-        
+        root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/Counter.fxml"));
+        /*dimensiono la finestra di avvio in base alla grandezza dello schermo */
         Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
         primaryStage.setMinWidth(screenSize.getWidth() / 3);
         primaryStage.setMinHeight(screenSize.getHeight() / 2);
