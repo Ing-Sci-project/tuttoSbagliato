@@ -1,8 +1,11 @@
 package it.unibo.game;
 
 import java.awt.Dimension;
+import java.io.IOException;
 
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -15,9 +18,9 @@ public class View {
     private Button incrementButton;
     private Button decrementButton;
 
-    public View() {
+    public View() throws IOException {
         
-            valueLabel = new Label("0");
+        /*valueLabel = new Label("0");
 
             incrementButton = new Button("Increment");
             decrementButton = new Button("Decrement");
@@ -28,13 +31,14 @@ public class View {
 
             VBox root = new VBox(30);
             root.setPadding(new Insets(10));
-            root.getChildren().addAll(valueLabel, buttonBox);
+            root.getChildren().addAll(valueLabel, buttonBox); */
          
         // Set up the stage
         /*creo una finestra in base la dimensione dello schermo in cui viene 
         * lanciata l'applicazione
         Parent root = FXMLLoader.load(getClass().getResource(""));
         */
+        final Parent root = FXMLLoader.load(ClassLoader.getSystemResource("layouts/counter.fxml"));
         
         try {
             Stage stage = new Stage();
