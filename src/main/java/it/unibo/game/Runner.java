@@ -4,14 +4,14 @@ import java.io.FileNotFoundException;
 import javafx.application.Application;
 
 public class Runner {
-    private Runner(){};
+    private Runner() {};
 
     /**
-    * @param args
-    *            ignored
-    * @throws FileNotFoundException 
-    */
-   public static void main(final String... args) throws FileNotFoundException {
-    Application.launch(ArkanoidApp.class);
-}
+     * @param args
+     *             ignored
+     * @throws FileNotFoundException
+     */
+    public static void main(final String... args) throws FileNotFoundException {
+        Application.launch(ArkanoidApp.class);
+    }
 }
